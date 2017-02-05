@@ -361,7 +361,7 @@
 		C.activate_hand("r")
 
 /obj/screen/inventory/hand/update_icon()
-	if (src.slot_id == (parentmob.hand ? slot_l_hand : slot_r_hand)) //Если данный элемент ХУДа отображает левую
+	if (src.slot_id == (parentmob.hand ? slot_l_hand : slot_r_hand)) //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 		src.icon_state = "act_hand[src.slot_id==slot_l_hand ? "-l" : "-r"]"
 	else
 		src.icon_state = "hand[src.slot_id==slot_l_hand ? "-l" : "-r"]"
@@ -1133,14 +1133,14 @@
 //			owner.radio_use_icon.name = "Disallow Radio Use"
 //-----------------------Gun Mod End------------------------------
 
-//-----------------------toggle_invetory------------------------------
-/obj/screen/toggle_invetory
+//-----------------------toggle_inventory------------------------------
+/obj/screen/toggle_inventory
 	icon = 'icons/mob/screen/ErisStyle.dmi'
 	icon_state = "b-open"
-	name = "toggle invetory"
+	name = "toggle inventory"
 	screen_loc = "1,0"
 
-/obj/screen/toggle_invetory/proc/hideobjects()
+/obj/screen/toggle_inventory/proc/hideobjects()
 	for (var/obj/screen/HUDelement in parentmob.HUDinventory)
 		if (HUDelement.hideflag & TOGGLE_INVENTORY_FLAG)
 			HUDelement.invisibility = 101
@@ -1149,14 +1149,14 @@
 		if (HUDelement.hideflag & TOGGLE_INVENTORY_FLAG)
 			HUDelement.invisibility = 101
 
-/obj/screen/toggle_invetory/proc/showobjects()
+/obj/screen/toggle_inventory/proc/showobjects()
 	for (var/obj/screen/HUDelement in parentmob.HUDinventory)
 		HUDelement.invisibility = 0
 		hidden_inventory_update(HUDelement)
 	for (var/obj/screen/HUDelement in parentmob.HUDfrippery)
 		HUDelement.invisibility = 0
 
-/obj/screen/toggle_invetory/Click()
+/obj/screen/toggle_inventory/Click()
 
 	if(parentmob.inventory_shown)
 		parentmob.inventory_shown = 0
@@ -1172,7 +1172,7 @@
 
 
 
-/obj/screen/toggle_invetory/proc/hidden_inventory_update(obj/screen/inventory/inv_elem)
+/obj/screen/toggle_inventory/proc/hidden_inventory_update(obj/screen/inventory/inv_elem)
 	var/mob/living/carbon/human/H = parentmob
 	switch (inv_elem.slot_id)
 		if(slot_head)
@@ -1279,4 +1279,4 @@
 	update_fire(0)
 	update_surgery(0)
 */
-//-----------------------toggle_invetory End------------------------------
+//-----------------------toggle_inventory End------------------------------

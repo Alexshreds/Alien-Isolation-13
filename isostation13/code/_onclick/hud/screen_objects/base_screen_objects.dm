@@ -361,7 +361,7 @@
 		C.activate_hand("r")
 
 /obj/screen/inventory/hand/update_icon()
-	if (src.slot_id == (parentmob.hand ? slot_l_hand : slot_r_hand)) //���� ������ ������� ���� ���������� �����
+	if (src.slot_id == (parentmob.hand ? slot_l_hand : slot_r_hand))
 		src.icon_state = "act_hand[src.slot_id==slot_l_hand ? "-l" : "-r"]"
 	else
 		src.icon_state = "hand[src.slot_id==slot_l_hand ? "-l" : "-r"]"

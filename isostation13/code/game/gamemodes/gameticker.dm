@@ -30,10 +30,15 @@ var/global/datum/controller/gameticker/ticker
 
 	var/novote = 1
 
+	//more specific pools for VERY commonly used things that should never be made with new() - which is inevitable with basic pools
+	var/datum/math_pool/math_datum_pool = null//speeds up projectiles quite a bit
+	var/datum/basic_mob_pool/basic_mob_pool = null//should speed up alien larva creation, which can be laggy, and they often burst near humans
+
 /datum/controller/gameticker/proc/pregame()
+	math_datum_pool = new/datum/math_pool()
+	basic_mob_pool = new/datum/basic_mob_pool()
 	for (var/obj/machinery/atmospherics/unary/vent_pump/somevent in world) //todo: move this to a better place
 		vent_list += somevent
-
 	login_music = pick(\
 	/*'sound/music/halloween/skeletons.ogg',\
 	'sound/music/halloween/halloween.ogg',\

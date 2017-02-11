@@ -24,7 +24,7 @@
 			if(M.process() == PROCESS_KILL)
 				//M.inMachineList = 0 We don't use this debugging function
 				machines -= M
-			if(M && M.use_power)
+			if(M.use_power)
 				M.auto_use_power()
 		else
 			catchBadType(M)

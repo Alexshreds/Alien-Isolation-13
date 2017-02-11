@@ -72,7 +72,7 @@
 			clear_overlays()
 	else
 		++progress
-		if (ishuman(buckled_mob) && buckled_mob:alien_embryo != null || ishuman(buckled_mob) && istype(buckled_mob.head, /obj/item/clothing/mask/facehugger))
+		if (ishuman(buckled_mob) && buckled_mob:alien_embryo != null)
 			if (!stages[STAGE_CONTRACTION_FAILED])
 				buckled_mob.visible_message(\
 					"<span class='notice'>[src] starts to wrap around [buckled_mob.name]'s body, but suddenly stops.</span>",\

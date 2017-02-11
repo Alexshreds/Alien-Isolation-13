@@ -132,6 +132,7 @@
 #include "code\controllers\Processes\ai.dm"
 #include "code\controllers\Processes\air.dm"
 #include "code\controllers\Processes\alarm.dm"
+#include "code\controllers\Processes\basic_mob_pool.dm"
 #include "code\controllers\Processes\chemistry.dm"
 #include "code\controllers\Processes\emergencyShuttle.dm"
 #include "code\controllers\Processes\event.dm"
